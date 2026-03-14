@@ -17,48 +17,96 @@ GROUP_CHAT_ID = -1003809622723
 NUM_EMOJI = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 
 QUESTIONS_LOTIN = [
-    "Siz qaysi uchastkada ishlaysiz?\n(Masalan: Pechat, tigel, laminatsiya, qadoqlash, gofra liniya, kashirovka, ombor)",
-    "Ish davringiz mobaynida qaysi buyurtma ustida ishlayotganda muammoga duch keldingiz? Buyurtma nomini yozing.\n(Masalan: Indorama, Belissimo)",
-    "Aniq qanday muammo yuzaga keldi? Nima bo'lganini batafsil tushuntiring.\n(Masalan: rang farq qildi, qog'oz tiqildi, kesish noto'g'ri chiqdi, muddatga ulgurilmadi...)",
-    "Bu muammo ishlab chiqarishning qaysi bosqichida paydo bo'ldi?\n(Masalan: maket tayyorlashda, plastina chiqarishda, bosishda, kesishda, laminatsiyada, yig'ishda, jo'natishda)",
-    "Bu muammo qancha tez-tez takrorlanadi?\n(Har kuni / haftada bir necha marta / oyda bir-ikki marta / kamdan-kam / birinchi marta)",
-    "Muammo tufayli qanday zarar bo'ldi? Vaqt yo'qotildimi, material isrof bo'ldimi, buyurtma qayta ishlandimi yoki mijoz norozi bo'ldimi?",
-    "Sizningcha, bu muammoning asosiy sababi nimada?\n(Masalan: uskuna eski, material sifatsiz, tajriba yetishmaydi, bo'limlar o'rtasida aloqa yo'q, yuklama ko'p...)",
-    "Bu muammoni yechish uchun nima qilish kerak deb o'ylaysiz? Qadamma-qadam yozing.",
-    "Yechimni amalga oshirish uchun nimalar kerak bo'ladi?\n(Masalan: yangi uskuna, xodimlarni o'qitish, qo'shimcha odam, jarayonni o'zgartirish, dasturiy ta'minot...)",
-    "Yana qanday taklifingiz bor? Biz bilmagan, lekin siz har kuni ko'rib yurgan boshqa muammo yoki yaxshilash mumkin bo'lgan joy bormi?",
+    "Siz qaysi dastgohda ishlaysiz?
+(Masalan: Pechat, Tigel, Laminatsiya, Gofra liniya, Kashirovka, Ombor)",
+    "Sizning dastgohingizdan qaysi mahsulotlar o'tadi?
+(Masalan: Indorama, Belissimo)",
+    "Shu mahsulotlar sizning dastgohingizdan o'tganda qanday muammolar yuzaga keladi? Barchasini yozing.
+(Masalan: rang farq qiladi, o'lcham noto'g'ri chiqadi)",
+    "Bu muammolardan qaysi biri eng ko'p takrorlanadi va ishni to'xtatadi?
+(Masalan: har kuni / haftada bir necha marta)",
+    "Muammo yuzaga kelganda mahsulotga nima bo'ladi?
+(Masalan: qayta ishlanadi, yo'q qilinadi, keyingi bosqichga o'tadi)",
+    "Bu muammolarning asosiy sababi nima deb o'ylaysiz?
+(Masalan: dastgoh eski, material sifatsiz, sozlash noto'g'ri)",
+    "Bu muammolar tufayli qancha mahsulot isrof bo'ladi?
+(Masalan: 1 oyda nechta mahsulot)",
+    "Bu muammolarni hal qilish uchun nima qildingiz? Natija bo'ldimi?
+(Masalan: texnologga aytdim, sozladim, lekin yana takrorlandi)",
+    "Muammoni butunlay yo'qotish uchun nima kerak deb o'ylaysiz?
+(Masalan: dastgohni ta'mirlash, yangi material, qo'shimcha o'qitish)",
+    "Dastgohingiz va ish joyingizni yaxshilash uchun yana qanday taklifingiz bor?",
 ]
 
 QUESTIONS_KIRILL = [
-    "Сиз қайси участкада ишлайсиз?\n(Масалан: Печат, тигель, ламинация, қадоқлаш, гофра линия, кашировка, омбор)",
-    "Иш даврингиз мобайнида қайси буюртма устида ишлаётганда муаммога дуч келдингиз? Буюртма номини ёзинг.\n(Масалан: Индорама, Белиссимо)",
-    "Аниқ қандай муаммо юзага келди? Нима бўлганини батафсил тушунтиринг.\n(Масалан: ранг фарқ қилди, қоғоз тиқилди, кесиш нотўғри чиқди, муддатга улгурилмади...)",
-    "Бу муаммо ишлаб чиқаришнинг қайси босқичида пайдо бўлди?\n(Масалан: макет тайёрлашда, пластина чиқаришда, босишда, кесишда, ламинацияда, йиғишда, жўнатишда)",
-    "Бу муаммо қанча тез-тез такрорланади?\n(Ҳар куни / ҳафтада бир неча марта / ойда бир-икки марта / камдан-кам / биринчи марта)",
-    "Муаммо туфайли қандай зарар бўлди? Вақт йўқотилдими, материал исроф бўлдими, буюртма қайта ишландими ёки мижоз норози бўлдими?",
-    "Сизнингча, бу муаммонинг асосий сабаби нимада?\n(Масалан: ускуна эски, материал сифатсиз, тажриба етишмайди, бўлимлар ўртасида алоқа йўқ, юклама кўп...)",
-    "Бу муаммони ечиш учун нима қилиш керак деб ўйлайсиз? Қадамма-қадам ёзинг.",
-    "Ечимни амалга ошириш учун нималар керак бўлади?\n(Масалан: янги ускуна, ходимларни ўқитиш, қўшимча одам, жараённи ўзгартириш, дастурий таъминот...)",
-    "Яна қандай таклифингиз бор? Биз билмаган, лекин сиз ҳар куни кўриб юрган бошқа муаммо ёки яхшилаш мумкин бўлган жой борми?",
+    "Сиз қайси дастгоҳда ишлайсиз?
+(Масалан: Печат, Тигель, Ламинация, Гофра линия, Кашировка, Омбор)",
+    "Сизнинг дастгоҳингиздан қайси маҳсулотлар ўтади?
+(Масалан: Индорама, Белиссимо)",
+    "Шу маҳсулотлар сизнинг дастгоҳингиздан ўтганда қандай муаммолар юзага келади? Барчасини ёзинг.
+(Масалан: ранг фарқ қилади, ўлчам нотўғри чиқади)",
+    "Бу муаммолардан қайси бири энг кўп такрорланади ва ишни тўхтатади?
+(Масалан: ҳар куни / ҳафтада бир неча марта)",
+    "Муаммо юзага келганда маҳсулотга нима бўлади?
+(Масалан: қайта ишланади, йўқ қилинади, кейинги босқичга ўтади)",
+    "Бу муаммоларнинг асосий сабаби нима деб ўйлайсиз?
+(Масалан: дастгоҳ эски, материал сифатсиз, созлаш нотўғри)",
+    "Бу муаммолар туфайли қанча маҳсулот исроф бўлади?
+(Масалан: 1 ойда нечта маҳсулот)",
+    "Бу муаммоларни ҳал қилиш учун нима қилдингиз? Натижа бўлдими?
+(Масалан: технологга айтдим, созладим, лекин яна такрорланди)",
+    "Муаммони бутунлай йўқотиш учун нима керак деб ўйлайсиз?
+(Масалан: дастгоҳни таъмирлаш, янги материал, қўшимча ўқитиш)",
+    "Дастгоҳингиз ва иш жойингизни яхшилаш учун яна қандай таклифингиз бор?",
 ]
 
 QUESTIONS_RU = [
-    "На каком участке вы работаете?\n(Например: печать, тигель, ламинация, упаковка, гофролиния, кашировка, склад)",
-    "С каким заказом вы столкнулись с проблемой во время работы? Укажите название заказа.\n(Например: Indorama, Belissimo)",
-    "Какая именно проблема возникла? Подробно опишите, что произошло.\n(Например: различие в цвете, застряла бумага, неправильная резка, не успели в срок и т.д.)",
-    "На каком этапе производства возникла эта проблема?\n(Например: при подготовке макета, изготовлении пластины, печати, резке, ламинации, сборке или отгрузке)",
-    "Как часто повторяется эта проблема?\n(Каждый день / несколько раз в неделю / один-два раза в месяц / редко / впервые)",
-    "Какой ущерб был нанесён из-за этой проблемы? Была ли потеря времени, перерасход материалов, переделка заказа или недовольство клиента?",
-    "По вашему мнению, в чём основная причина этой проблемы?\n(Например: устаревшее оборудование, низкое качество материала, недостаток опыта, отсутствие взаимодействия между отделами, высокая нагрузка и т.д.)",
-    "Как, по вашему мнению, можно решить эту проблему? Опишите по шагам.",
-    "Что потребуется для реализации этого решения?\n(Например: новое оборудование, обучение сотрудников, дополнительный персонал, изменение процесса, программное обеспечение и т.д.)",
-    "Есть ли у вас ещё какие-либо предложения? Есть ли другие проблемы или возможности для улучшения, которые вы видите каждый день, но о которых мы можем не знать?",
+    "На каком станке вы работаете?
+(Например: Печать, Тигель, Ламинация, Гофролиния, Кашировка, Склад)",
+    "Какие продукты проходят через ваш станок?
+(Например: Indorama, Belissimo)",
+    "Какие проблемы возникают с этими продуктами на вашем станке? Напишите все.
+(Например: различие в цвете, неправильный размер)",
+    "Какая из этих проблем повторяется чаще всего и останавливает работу?
+(Например: каждый день / несколько раз в неделю)",
+    "Что происходит с продуктом при возникновении проблемы?
+(Например: переделывается, выбрасывается, переходит на следующий этап)",
+    "По вашему мнению, в чём основная причина этих проблем?
+(Например: станок старый, материал некачественный, неправильная настройка)",
+    "Сколько продукции теряется из-за этих проблем?
+(Например: сколько штук в месяц)",
+    "Что вы сделали для решения этих проблем? Был ли результат?
+(Например: сказал технологу, настроил, но проблема повторилась)",
+    "Что нужно, чтобы полностью устранить проблему?
+(Например: ремонт станка, новый материал, дополнительное обучение)",
+    "Какие ещё предложения у вас есть по улучшению вашего станка и рабочего места?",
 ]
 
 # Eslatma xabarlari
 REMINDER_LOTIN = "⚠️ Eslatma!! Barcha ma'lumotlar sir saqlanadi.\nVaqtingizni ajratganingiz uchun tashakkur."
 REMINDER_KIRILL = "⚠️ Эслатма!! Барча маълумотлар сир сақланади.\nВақтингизни ажратганингиз учун ташаккур."
 REMINDER_RU = "⚠️ Напоминание!! Все данные хранятся в тайне.\nСпасибо за уделённое время."
+
+CONTINUE_LOTIN = "🔄 Botni qaytadan ishga tushirib, siz ko'rgan boshqa mahsulotlardagi muammolarni ham yozishingiz mumkin. Takliflarni yozish cheksiz, so'rovnomada qancha ko'p ishtirok etsangiz shuncha ko'p bonus olasiz."
+CONTINUE_KIRILL = "🔄 Ботни қайтадан ишга тушириб, сиз кўрган бошқа маҳсулотлардаги муаммоларни ҳам ёзишингиз мумкин. Таклифларни ёзиш чексиз, сўровномада қанча кўп иштирок этсангиз шунча кўп бонус оласиз."
+CONTINUE_RU = "🔄 Вы можете перезапустить бота и написать о проблемах с другими продуктами, которые вы видели. Предложений можно писать сколько угодно — чем больше участвуете, тем больше бонусов получите."
+
+# E'lon matni
+ELON_TEXT = """📢 E'lon !!
+
+So'rovnomada qatnashgan xodimlar taqdirlanadi.
+
+🏆 1) So'rovnomani birinchi to'ldirgan 10 ta xodim — 100.000 so'm pul mukofoti bilan taqdirlanadi.
+
+🏆 2) So'rovnomada eng ko'p muammo yozgan 10 ta xodim — 100.000 so'm pul mukofoti bilan taqdirlanadi.
+
+🏆 3) So'rovnomani batafsil to'ldirgan 10 ta xodim — 100.000 so'm pul mukofoti bilan taqdirlanadi.
+
+⛔️ So'rovnomada qatnashmagan xodimlarga 300.000 so'm jarima qo'llaniladi.
+
+✅ 1 ta xodim uchchala yo'nalishda ham g'olib bo'lishi mumkin.
+
+Hammangizdan so'rovnomada faol qatnashishni so'raymiz!"""
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -131,6 +179,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception:
         pass
 
+    # E'lonni yuborish
+    elon_msg = await update.message.reply_text(ELON_TEXT)
+    context.user_data["del"].append(elon_msg.message_id)
+
+    # Til tanlash tugmalari
     kb = [[
         InlineKeyboardButton("🇺🇿 O'zbek", callback_data="uz"),
         InlineKeyboardButton("🇷🇺 Русский", callback_data="ru"),
@@ -146,7 +199,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
-    await q.answer()
+    await q.answer(cache_time=0)
     lang = q.data
     context.user_data["lang"] = lang
 
@@ -166,10 +219,11 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return SCRIPT
     else:
         context.user_data["script"] = "ru"
-        kb = [[
-            InlineKeyboardButton("🖨 Офсет", callback_data="dept_ofset"),
-            InlineKeyboardButton("🖨 Флексо", callback_data="dept_flekso"),
-        ]]
+        kb = [
+            [InlineKeyboardButton("Офсет", callback_data="dept_ofset"), InlineKeyboardButton("Флексо", callback_data="dept_flekso")],
+            [InlineKeyboardButton("1-Департамент", callback_data="dept_1departament"), InlineKeyboardButton("2-Департамент", callback_data="dept_2departament")],
+            [InlineKeyboardButton("4-Департамент", callback_data="dept_4departament"), InlineKeyboardButton("5-Департамент", callback_data="dept_5departament")],
+        ]
         msg = await context.bot.send_message(
             chat_id=q.message.chat_id,
             text="🏭 Выберите ваш отдел:",
@@ -181,22 +235,24 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
-    await q.answer()
+    await q.answer(cache_time=0)
     context.user_data["script"] = q.data
 
     await clear_old_messages(context, q.message.chat_id)
 
     if q.data == "kirill":
-        kb = [[
-            InlineKeyboardButton("🖨 Офсет", callback_data="dept_ofset"),
-            InlineKeyboardButton("🖨 Флексо", callback_data="dept_flekso"),
-        ]]
+        kb = [
+            [InlineKeyboardButton("Офсет", callback_data="dept_ofset"), InlineKeyboardButton("Флексо", callback_data="dept_flekso")],
+            [InlineKeyboardButton("1-Департамент", callback_data="dept_1departament"), InlineKeyboardButton("2-Департамент", callback_data="dept_2departament")],
+            [InlineKeyboardButton("4-Департамент", callback_data="dept_4departament"), InlineKeyboardButton("5-Департамент", callback_data="dept_5departament")],
+        ]
         text = "🏭 Бўлимингизни танланг:"
     else:
-        kb = [[
-            InlineKeyboardButton("🖨 Ofset", callback_data="dept_ofset"),
-            InlineKeyboardButton("🖨 Flekso", callback_data="dept_flekso"),
-        ]]
+        kb = [
+            [InlineKeyboardButton("Ofset", callback_data="dept_ofset"), InlineKeyboardButton("Flekso", callback_data="dept_flekso")],
+            [InlineKeyboardButton("1-Departament", callback_data="dept_1departament"), InlineKeyboardButton("2-Departament", callback_data="dept_2departament")],
+            [InlineKeyboardButton("4-Departament", callback_data="dept_4departament"), InlineKeyboardButton("5-Departament", callback_data="dept_5departament")],
+        ]
         text = "🏭 Bo'limingizni tanlang:"
 
     msg = await context.bot.send_message(
@@ -210,13 +266,18 @@ async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
-    await q.answer()
+    await q.answer(cache_time=0)
 
     dept = q.data.replace("dept_", "")
-    if dept == "ofset":
-        context.user_data["department"] = "Ofset"
-    else:
-        context.user_data["department"] = "Flekso"
+    dept_map = {
+        "ofset": "Ofset",
+        "flekso": "Flekso",
+        "1departament": "1-Departament",
+        "2departament": "2-Departament",
+        "4departament": "4-Departament",
+        "5departament": "5-Departament",
+    }
+    context.user_data["department"] = dept_map.get(dept, dept)
 
     lang = context.user_data.get("lang")
     script = context.user_data.get("script")
@@ -230,7 +291,7 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         text = "👤 Ism va familiyangizni yozing:"
 
-    msg = await context.bot.send_message(chat_id=q.message.chat_id, text=text)
+    msg = await context.bot.send_message(chat_id=q.message.chat_id, text=text, )
     context.user_data["del"].append(msg.message_id)
     return FULLNAME
 
@@ -265,7 +326,7 @@ async def send_question(chat_id, context):
     num = NUM_EMOJI[i] if i < len(NUM_EMOJI) else f"{i+1}."
     header = f"📋 {label} ({i + 1}/{len(questions)})\n\n{num} "
 
-    msg = await context.bot.send_message(chat_id=chat_id, text=header + questions[i])
+    msg = await context.bot.send_message(chat_id=chat_id, text=header + questions[i], )
     context.user_data["del"].append(msg.message_id)
     return SURVEY
 
@@ -297,17 +358,34 @@ async def finish(chat_id, context):
     if lang == "ru":
         thanks = "✅ Спасибо! Опрос успешно завершён.\n\nВаши ответы приняты."
         reminder = REMINDER_RU
+        continue_msg = CONTINUE_RU
         til = "🇷🇺 Русский"
     elif script == "kirill":
         thanks = "✅ Раҳмат! Сўровнома муваффақиятли якунланди.\n\nЖавобларингиз қабул қилинди."
         reminder = REMINDER_KIRILL
+        continue_msg = CONTINUE_KIRILL
         til = "🇺🇿 Ўзбек (Кирилл)"
     else:
         thanks = "✅ Rahmat! So'rovnoma muvaffaqiyatli yakunlandi.\n\nJavoblaringiz qabul qilindi."
         reminder = REMINDER_LOTIN
+        continue_msg = CONTINUE_LOTIN
         til = "🇺🇿 O'zbek (Lotin)"
 
     await context.bot.send_message(chat_id=chat_id, text=thanks + "\n\n" + reminder)
+
+    if lang == "ru":
+        btn_text = "🔄 Пройти ещё раз"
+    elif script == "kirill":
+        btn_text = "🔄 Яна иштирок этиш"
+    else:
+        btn_text = "🔄 Yana ishtirok etish"
+
+    kb = [[InlineKeyboardButton(btn_text, callback_data="restart_survey")]]
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=continue_msg,
+        reply_markup=InlineKeyboardMarkup(kb)
+    )
 
     text = (
         f"📊 YANGI SO'ROVNOMA\n"
@@ -328,6 +406,34 @@ async def finish(chat_id, context):
 
     context.user_data.clear()
     return ConversationHandler.END
+
+
+async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    q = update.callback_query
+    await q.answer(cache_time=0)
+
+    context.user_data.clear()
+    context.user_data["del"] = []
+
+    try:
+        await q.message.delete()
+    except Exception:
+        pass
+
+    elon_msg = await context.bot.send_message(chat_id=q.message.chat_id, text=ELON_TEXT)
+    context.user_data["del"].append(elon_msg.message_id)
+
+    kb = [[
+        InlineKeyboardButton("🇺🇿 O'zbek", callback_data="uz"),
+        InlineKeyboardButton("🇷🇺 Русский", callback_data="ru"),
+    ]]
+    msg = await context.bot.send_message(
+        chat_id=q.message.chat_id,
+        text="🌐 Tilni tanlang / Выберите язык:",
+        reply_markup=InlineKeyboardMarkup(kb),
+    )
+    context.user_data["del"].append(msg.message_id)
+    return LANG
 
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -351,18 +457,23 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
-    app.add_handler(ConversationHandler(
-        entry_points=[CommandHandler("start", start)],
+    conv_handler = ConversationHandler(
+        entry_points=[CommandHandler("start", start), CallbackQueryHandler(restart_survey, pattern="^restart_survey$")],
         states={
             LANG: [CallbackQueryHandler(lang_chosen, pattern="^(uz|ru)$")],
             SCRIPT: [CallbackQueryHandler(script_chosen, pattern="^(lotin|kirill)$")],
             DEPARTMENT: [CallbackQueryHandler(dept_chosen, pattern="^dept_")],
             FULLNAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, got_name)],
-            SURVEY: [MessageHandler(filters.TEXT & ~filters.COMMAND, got_answer)],
+            SURVEY: [
+                MessageHandler(filters.TEXT & ~filters.COMMAND, got_answer),
+                CommandHandler("start", start),
+            ],
         },
-        fallbacks=[CommandHandler("cancel", cancel), CommandHandler("start", start)],
+        fallbacks=[CommandHandler("cancel", cancel), CommandHandler("start", start), CallbackQueryHandler(restart_survey, pattern="^restart_survey$")],
         allow_reentry=True,
-    ))
+        conversation_timeout=3600,
+    )
+    app.add_handler(conv_handler)
     print("✅ Bot ishga tushdi!")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
