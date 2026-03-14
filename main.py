@@ -17,68 +17,41 @@ GROUP_CHAT_ID = -1003809622723
 NUM_EMOJI = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
 
 QUESTIONS_LOTIN = [
-    "Siz qaysi dastgohda ishlaysiz?
-(Masalan: Pechat, Tigel, Laminatsiya, Gofra liniya, Kashirovka, Ombor)",
-    "Sizning dastgohingizdan qaysi mahsulotlar o'tadi?
-(Masalan: Indorama, Belissimo)",
-    "Shu mahsulotlar sizning dastgohingizdan o'tganda qanday muammolar yuzaga keladi? Barchasini yozing.
-(Masalan: rang farq qiladi, o'lcham noto'g'ri chiqadi)",
-    "Bu muammolardan qaysi biri eng ko'p takrorlanadi va ishni to'xtatadi?
-(Masalan: har kuni / haftada bir necha marta)",
-    "Muammo yuzaga kelganda mahsulotga nima bo'ladi?
-(Masalan: qayta ishlanadi, yo'q qilinadi, keyingi bosqichga o'tadi)",
-    "Bu muammolarning asosiy sababi nima deb o'ylaysiz?
-(Masalan: dastgoh eski, material sifatsiz, sozlash noto'g'ri)",
-    "Bu muammolar tufayli qancha mahsulot isrof bo'ladi?
-(Masalan: 1 oyda nechta mahsulot)",
-    "Bu muammolarni hal qilish uchun nima qildingiz? Natija bo'ldimi?
-(Masalan: texnologga aytdim, sozladim, lekin yana takrorlandi)",
-    "Muammoni butunlay yo'qotish uchun nima kerak deb o'ylaysiz?
-(Masalan: dastgohni ta'mirlash, yangi material, qo'shimcha o'qitish)",
+    "Siz qaysi dastgohda ishlaysiz?\n(Masalan: Pechat, Tigel, Laminatsiya, Gofra liniya, Kashirovka, Ombor)",
+    "Sizning dastgohingizdan qaysi mahsulotlar o'tadi?\n(Masalan: Indorama, Belissimo)",
+    "Shu mahsulotlar sizning dastgohingizdan o'tganda qanday muammolar yuzaga keladi? Barchasini yozing.\n(Masalan: rang farq qiladi, o'lcham noto'g'ri chiqadi)",
+    "Bu muammolardan qaysi biri eng ko'p takrorlanadi va ishni to'xtatadi?\n(Masalan: har kuni / haftada bir necha marta)",
+    "Muammo yuzaga kelganda mahsulotga nima bo'ladi?\n(Masalan: qayta ishlanadi, yo'q qilinadi, keyingi bosqichga o'tadi)",
+    "Bu muammolarning asosiy sababi nima deb o'ylaysiz?\n(Masalan: dastgoh eski, material sifatsiz, sozlash noto'g'ri)",
+    "Bu muammolar tufayli qancha mahsulot isrof bo'ladi?\n(Masalan: 1 oyda nechta mahsulot)",
+    "Bu muammolarni hal qilish uchun nima qildingiz? Natija bo'ldimi?\n(Masalan: texnologga aytdim, sozladim, lekin yana takrorlandi)",
+    "Muammoni butunlay yo'qotish uchun nima kerak deb o'ylaysiz?\n(Masalan: dastgohni ta'mirlash, yangi material, qo'shimcha o'qitish)",
     "Dastgohingiz va ish joyingizni yaxshilash uchun yana qanday taklifingiz bor?",
 ]
 
 QUESTIONS_KIRILL = [
-    "Сиз қайси дастгоҳда ишлайсиз?
-(Масалан: Печат, Тигель, Ламинация, Гофра линия, Кашировка, Омбор)",
-    "Сизнинг дастгоҳингиздан қайси маҳсулотлар ўтади?
-(Масалан: Индорама, Белиссимо)",
-    "Шу маҳсулотлар сизнинг дастгоҳингиздан ўтганда қандай муаммолар юзага келади? Барчасини ёзинг.
-(Масалан: ранг фарқ қилади, ўлчам нотўғри чиқади)",
-    "Бу муаммолардан қайси бири энг кўп такрорланади ва ишни тўхтатади?
-(Масалан: ҳар куни / ҳафтада бир неча марта)",
-    "Муаммо юзага келганда маҳсулотга нима бўлади?
-(Масалан: қайта ишланади, йўқ қилинади, кейинги босқичга ўтади)",
-    "Бу муаммоларнинг асосий сабаби нима деб ўйлайсиз?
-(Масалан: дастгоҳ эски, материал сифатсиз, созлаш нотўғри)",
-    "Бу муаммолар туфайли қанча маҳсулот исроф бўлади?
-(Масалан: 1 ойда нечта маҳсулот)",
-    "Бу муаммоларни ҳал қилиш учун нима қилдингиз? Натижа бўлдими?
-(Масалан: технологга айтдим, созладим, лекин яна такрорланди)",
-    "Муаммони бутунлай йўқотиш учун нима керак деб ўйлайсиз?
-(Масалан: дастгоҳни таъмирлаш, янги материал, қўшимча ўқитиш)",
+    "Сиз қайси дастгоҳда ишлайсиз?\n(Масалан: Печат, Тигель, Ламинация, Гофра линия, Кашировка, Омбор)",
+    "Сизнинг дастгоҳингиздан қайси маҳсулотлар ўтади?\n(Масалан: Индорама, Белиссимо)",
+    "Шу маҳсулотлар сизнинг дастгоҳингиздан ўтганда қандай муаммолар юзага келади? Барчасини ёзинг.\n(Масалан: ранг фарқ қилади, ўлчам нотўғри чиқади)",
+    "Бу муаммолардан қайси бири энг кўп такрорланади ва ишни тўхтатади?\n(Масалан: ҳар куни / ҳафтада бир неча марта)",
+    "Муаммо юзага келганда маҳсулотга нима бўлади?\n(Масалан: қайта ишланади, йўқ қилинади, кейинги босқичга ўтади)",
+    "Бу муаммоларнинг асосий сабаби нима деб ўйлайсиз?\n(Масалан: дастгоҳ эски, материал сифатсиз, созлаш нотўғри)",
+    "Бу муаммолар туфайли қанча маҳсулот исроф бўлади?\n(Масалан: 1 ойда нечта маҳсулот)",
+    "Бу муаммоларни ҳал қилиш учун нима қилдингиз? Натижа бўлдими?\n(Масалан: технологга айтдим, созладим, лекин яна такрорланди)",
+    "Муаммони бутунлай йўқотиш учун нима керак деб ўйлайсиз?\n(Масалан: дастгоҳни таъмирлаш, янги материал, қўшимча ўқитиш)",
     "Дастгоҳингиз ва иш жойингизни яхшилаш учун яна қандай таклифингиз бор?",
 ]
 
 QUESTIONS_RU = [
-    "На каком станке вы работаете?
-(Например: Печать, Тигель, Ламинация, Гофролиния, Кашировка, Склад)",
-    "Какие продукты проходят через ваш станок?
-(Например: Indorama, Belissimo)",
-    "Какие проблемы возникают с этими продуктами на вашем станке? Напишите все.
-(Например: различие в цвете, неправильный размер)",
-    "Какая из этих проблем повторяется чаще всего и останавливает работу?
-(Например: каждый день / несколько раз в неделю)",
-    "Что происходит с продуктом при возникновении проблемы?
-(Например: переделывается, выбрасывается, переходит на следующий этап)",
-    "По вашему мнению, в чём основная причина этих проблем?
-(Например: станок старый, материал некачественный, неправильная настройка)",
-    "Сколько продукции теряется из-за этих проблем?
-(Например: сколько штук в месяц)",
-    "Что вы сделали для решения этих проблем? Был ли результат?
-(Например: сказал технологу, настроил, но проблема повторилась)",
-    "Что нужно, чтобы полностью устранить проблему?
-(Например: ремонт станка, новый материал, дополнительное обучение)",
+    "На каком станке вы работаете?\n(Например: Печать, Тигель, Ламинация, Гофролиния, Кашировка, Склад)",
+    "Какие продукты проходят через ваш станок?\n(Например: Indorama, Belissimo)",
+    "Какие проблемы возникают с этими продуктами на вашем станке? Напишите все.\n(Например: различие в цвете, неправильный размер)",
+    "Какая из этих проблем повторяется чаще всего и останавливает работу?\n(Например: каждый день / несколько раз в неделю)",
+    "Что происходит с продуктом при возникновении проблемы?\n(Например: переделывается, выбрасывается, переходит на следующий этап)",
+    "По вашему мнению, в чём основная причина этих проблем?\n(Например: станок старый, материал некачественный, неправильная настройка)",
+    "Сколько продукции теряется из-за этих проблем?\n(Например: сколько штук в месяц)",
+    "Что вы сделали для решения этих проблем? Был ли результат?\n(Например: сказал технологу, настроил, но проблема повторилась)",
+    "Что нужно, чтобы полностью устранить проблему?\n(Например: ремонт станка, новый материал, дополнительное обучение)",
     "Какие ещё предложения у вас есть по улучшению вашего станка и рабочего места?",
 ]
 
