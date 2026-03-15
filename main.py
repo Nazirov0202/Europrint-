@@ -270,6 +270,7 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def got_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["fullname"] = update.message.text
+    context.user_data["del"].append(update.message.message_id)
     context.user_data["answers"] = []
     context.user_data["q_num"] = 0
 
@@ -300,6 +301,7 @@ async def send_question(chat_id, context):
 async def got_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     questions = get_questions(context)
     context.user_data["answers"].append(update.message.text)
+    context.user_data["del"].append(update.message.message_id)
     context.user_data["q_num"] += 1
 
     if context.user_data["q_num"] >= len(questions):
