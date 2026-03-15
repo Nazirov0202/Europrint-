@@ -147,14 +147,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data.clear()
     context.user_data["del"] = []
 
-    try:
-        await update.message.delete()
-    except Exception:
-        pass
-
     # E'lonni yuborish
     elon_msg = await update.message.reply_text(ELON_TEXT)
-    context.user_data["del"].append(elon_msg.message_id)
 
     # Til tanlash tugmalari
     kb = [[
@@ -166,7 +160,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🌐 Tilni tanlang / Выберите язык:",
         reply_markup=InlineKeyboardMarkup(kb),
     )
-    context.user_data["del"].append(msg.message_id)
     return LANG
 
 
@@ -176,7 +169,6 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = q.data
     context.user_data["lang"] = lang
 
-    await clear_old_messages(context, q.message.chat_id)
 
     if lang == "uz":
         kb = [[
@@ -188,7 +180,6 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text="📝 Yozuv turini tanlang:",
             reply_markup=InlineKeyboardMarkup(kb),
         )
-        context.user_data["del"].append(msg.message_id)
         return SCRIPT
     else:
         context.user_data["script"] = "ru"
@@ -202,7 +193,6 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text="🏭 Выберите ваш отдел:",
             reply_markup=InlineKeyboardMarkup(kb),
         )
-        context.user_data["del"].append(msg.message_id)
         return DEPARTMENT
 
 
@@ -211,7 +201,6 @@ async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await q.answer(cache_time=0)
     context.user_data["script"] = q.data
 
-    await clear_old_messages(context, q.message.chat_id)
 
     if q.data == "kirill":
         kb = [
@@ -233,7 +222,6 @@ async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text=text,
         reply_markup=InlineKeyboardMarkup(kb),
     )
-    context.user_data["del"].append(msg.message_id)
     return DEPARTMENT
 
 
@@ -255,7 +243,6 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = context.user_data.get("lang")
     script = context.user_data.get("script")
 
-    await clear_old_messages(context, q.message.chat_id)
 
     if lang == "ru":
         text = "👤 Напишите ваше имя и фамилию:"
@@ -265,7 +252,6 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text = "👤 Ism va familiyangizni yozing:"
 
     msg = await context.bot.send_message(chat_id=q.message.chat_id, text=text, )
-    context.user_data["del"].append(msg.message_id)
     return FULLNAME
 
 
@@ -273,12 +259,6 @@ async def got_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["fullname"] = update.message.text
     context.user_data["answers"] = []
     context.user_data["q_num"] = 0
-
-    await clear_old_messages(context, update.message.chat_id)
-    try:
-        await update.message.delete()
-    except Exception:
-        pass
 
     return await send_question(update.message.chat_id, context)
 
@@ -300,7 +280,6 @@ async def send_question(chat_id, context):
     header = f"📋 {label} ({i + 1}/{len(questions)})\n\n{num} "
 
     msg = await context.bot.send_message(chat_id=chat_id, text=header + questions[i], )
-    context.user_data["del"].append(msg.message_id)
     return SURVEY
 
 
@@ -308,12 +287,6 @@ async def got_answer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     questions = get_questions(context)
     context.user_data["answers"].append(update.message.text)
     context.user_data["q_num"] += 1
-
-    await clear_old_messages(context, update.message.chat_id)
-    try:
-        await update.message.delete()
-    except Exception:
-        pass
 
     if context.user_data["q_num"] >= len(questions):
         return await finish(update.message.chat_id, context)
@@ -394,7 +367,6 @@ async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
         pass
 
     elon_msg = await context.bot.send_message(chat_id=q.message.chat_id, text=ELON_TEXT)
-    context.user_data["del"].append(elon_msg.message_id)
 
     kb = [[
         InlineKeyboardButton("🇺🇿 O'zbek", callback_data="uz"),
@@ -405,16 +377,12 @@ async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text="🌐 Tilni tanlang / Выберите язык:",
         reply_markup=InlineKeyboardMarkup(kb),
     )
-    context.user_data["del"].append(msg.message_id)
     return LANG
 
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = context.user_data.get("lang", "uz")
     script = context.user_data.get("script", "lotin")
-
-    if "del" in context.user_data:
-        await clear_old_messages(context, update.message.chat_id)
 
     if lang == "ru":
         text = "❌ Отменено. Нажмите /start."
