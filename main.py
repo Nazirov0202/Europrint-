@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
@@ -378,12 +379,15 @@ async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = q.message.chat_id
     current_msg_id = q.message.message_id
 
-    # Oxirgi 150 ta xabarni o'chirish
-    for mid in range(current_msg_id, max(current_msg_id - 150, 0), -1):
+    # Oxirgi 150 ta xabarni parallel o'chirish
+    async def try_delete(mid):
         try:
             await context.bot.delete_message(chat_id=chat_id, message_id=mid)
         except Exception:
             pass
+
+    tasks = [try_delete(mid) for mid in range(current_msg_id, max(current_msg_id - 150, 0), -1)]
+    await asyncio.gather(*tasks)
 
     context.user_data.clear()
     context.user_data["del"] = []
