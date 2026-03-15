@@ -169,12 +169,10 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = q.data
     context.user_data["lang"] = lang
 
-    # Tugmani o'chirish
     try:
-        await q.message.edit_reply_markup(reply_markup=None)
+        await q.message.delete()
     except Exception:
         pass
-
 
     if lang == "uz":
         kb = [[
@@ -207,12 +205,10 @@ async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await q.answer(cache_time=0)
     context.user_data["script"] = q.data
 
-    # Tugmani o'chirish
     try:
-        await q.message.edit_reply_markup(reply_markup=None)
+        await q.message.delete()
     except Exception:
         pass
-
 
     if q.data == "kirill":
         kb = [
@@ -241,12 +237,6 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer(cache_time=0)
 
-    # Tugmani o'chirish
-    try:
-        await q.message.edit_reply_markup(reply_markup=None)
-    except Exception:
-        pass
-
     dept = q.data.replace("dept_", "")
     dept_map = {
         "ofset": "Ofset",
@@ -258,9 +248,13 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     }
     context.user_data["department"] = dept_map.get(dept, dept)
 
+    try:
+        await q.message.delete()
+    except Exception:
+        pass
+
     lang = context.user_data.get("lang")
     script = context.user_data.get("script")
-
 
     if lang == "ru":
         text = "👤 Напишите ваше имя и фамилию:"
