@@ -357,26 +357,43 @@ async def finish(chat_id, context):
 async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer(cache_time=0)
+    chat_id = q.message.chat_id
 
-    context.user_data.clear()
-    context.user_data["del"] = []
+    # Barcha kuzatilgan xabarlarni o'chirish
+    for mid in context.user_data.get("del", []):
+        try:
+            await context.bot.delete_message(chat_id=chat_id, message_id=mid)
+        except Exception:
+            pass
 
+    # Tugma xabarini o'chirish
     try:
         await q.message.delete()
     except Exception:
         pass
 
-    elon_msg = await context.bot.send_message(chat_id=q.message.chat_id, text=ELON_TEXT)
+    # Rahmat xabarini o'chirish (tugmadan oldingi)
+    try:
+        await context.bot.delete_message(chat_id=chat_id, message_id=q.message.message_id - 1)
+    except Exception:
+        pass
+
+    context.user_data.clear()
+    context.user_data["del"] = []
+
+    elon_msg = await context.bot.send_message(chat_id=chat_id, text=ELON_TEXT)
+    context.user_data["del"].append(elon_msg.message_id)
 
     kb = [[
         InlineKeyboardButton("🇺🇿 O'zbek", callback_data="uz"),
         InlineKeyboardButton("🇷🇺 Русский", callback_data="ru"),
     ]]
     msg = await context.bot.send_message(
-        chat_id=q.message.chat_id,
+        chat_id=chat_id,
         text="🌐 Tilni tanlang / Выберите язык:",
         reply_markup=InlineKeyboardMarkup(kb),
     )
+    context.user_data["del"].append(msg.message_id)
     return LANG
 
 
