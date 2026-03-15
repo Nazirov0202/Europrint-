@@ -169,6 +169,12 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = q.data
     context.user_data["lang"] = lang
 
+    # Tugmani o'chirish
+    try:
+        await q.message.edit_reply_markup(reply_markup=None)
+    except Exception:
+        pass
+
 
     if lang == "uz":
         kb = [[
@@ -201,6 +207,12 @@ async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await q.answer(cache_time=0)
     context.user_data["script"] = q.data
 
+    # Tugmani o'chirish
+    try:
+        await q.message.edit_reply_markup(reply_markup=None)
+    except Exception:
+        pass
+
 
     if q.data == "kirill":
         kb = [
@@ -229,6 +241,12 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer(cache_time=0)
 
+    # Tugmani o'chirish
+    try:
+        await q.message.edit_reply_markup(reply_markup=None)
+    except Exception:
+        pass
+
     dept = q.data.replace("dept_", "")
     dept_map = {
         "ofset": "Ofset",
@@ -252,6 +270,7 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text = "👤 Ism va familiyangizni yozing:"
 
     msg = await context.bot.send_message(chat_id=q.message.chat_id, text=text, )
+    context.user_data["del"].append(msg.message_id)
     return FULLNAME
 
 
@@ -280,6 +299,7 @@ async def send_question(chat_id, context):
     header = f"📋 {label} ({i + 1}/{len(questions)})\n\n{num} "
 
     msg = await context.bot.send_message(chat_id=chat_id, text=header + questions[i], )
+    context.user_data["del"].append(msg.message_id)
     return SURVEY
 
 
@@ -317,7 +337,8 @@ async def finish(chat_id, context):
         continue_msg = CONTINUE_LOTIN
         til = "🇺🇿 O'zbek (Lotin)"
 
-    await context.bot.send_message(chat_id=chat_id, text=thanks + "\n\n" + reminder)
+    thanks_msg = await context.bot.send_message(chat_id=chat_id, text=thanks + "\n\n" + reminder)
+    context.user_data["del"].append(thanks_msg.message_id)
 
     if lang == "ru":
         btn_text = "🔄 Пройти ещё раз"
@@ -327,11 +348,12 @@ async def finish(chat_id, context):
         btn_text = "🔄 Yana ishtirok etish"
 
     kb = [[InlineKeyboardButton(btn_text, callback_data="restart_survey")]]
-    await context.bot.send_message(
+    continue_msg_obj = await context.bot.send_message(
         chat_id=chat_id,
         text=continue_msg,
         reply_markup=InlineKeyboardMarkup(kb)
     )
+    context.user_data["del"].append(continue_msg_obj.message_id)
 
     text = (
         f"📊 YANGI SO'ROVNOMA\n"
