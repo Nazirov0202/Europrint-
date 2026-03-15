@@ -376,25 +376,14 @@ async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer(cache_time=0)
     chat_id = q.message.chat_id
+    current_msg_id = q.message.message_id
 
-    # Barcha kuzatilgan xabarlarni o'chirish
-    for mid in context.user_data.get("del", []):
+    # Oxirgi 150 ta xabarni o'chirish
+    for mid in range(current_msg_id, max(current_msg_id - 150, 0), -1):
         try:
             await context.bot.delete_message(chat_id=chat_id, message_id=mid)
         except Exception:
             pass
-
-    # Tugma xabarini o'chirish
-    try:
-        await q.message.delete()
-    except Exception:
-        pass
-
-    # Rahmat xabarini o'chirish (tugmadan oldingi)
-    try:
-        await context.bot.delete_message(chat_id=chat_id, message_id=q.message.message_id - 1)
-    except Exception:
-        pass
 
     context.user_data.clear()
     context.user_data["del"] = []
