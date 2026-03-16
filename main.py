@@ -56,6 +56,45 @@ QUESTIONS_RU = [
     "Какие ещё предложения у вас есть по улучшению вашего станка и рабочего места?",
 ]
 
+QUESTIONS_DEPT_LOTIN = [
+    "Siz qaysi bo'limda va qanday vazifani bajarasiz?",
+    "Ish davomingizda qaysi jarayonda eng ko'p muammo yuzaga keladi?\n(Masalan: hujjat rasmiylashtirishda, buyurtma qabul qilishda, mijoz bilan muloqotda, hisobot tayyorlashda)",
+    "Bu muammoni batafsil tushuntiring.",
+    "Bu muammo qanchalik tez-tez takrorlanadi?\n(Har kuni / haftada bir necha marta / oyda bir-ikki marta / kamdan-kam)",
+    "Bu muammo tufayli qanday zarar bo'ladi?\n(Vaqt yo'qotiladi / ish kechikadi / mijoz norozi bo'ladi / xato ko'payadi)",
+    "Sizningcha, bu muammoning asosiy sababi nima?\n(Masalan: jarayon noaniq, mas'ul yo'q, axborot o'z vaqtida kelmaydi, dastur ishlamaydi)",
+    "Bu muammo tufayli bir oyda taxminan qancha vaqt isrof bo'ladi?\n(Masalan: taxminan necha soat)",
+    "Bu muammoni hal qilish uchun nima qildingiz? Natija bo'ldimi?",
+    "Muammoni butunlay yo'qotish uchun nima kerak deb o'ylaysiz?",
+    "Ish joyingiz va jarayonlarni yaxshilash uchun yana qanday taklifingiz bor?",
+]
+
+QUESTIONS_DEPT_KIRILL = [
+    "Сиз қайси бўлимда ва қандай вазифани бажарасиз?",
+    "Иш давомингизда қайси жараёнда энг кўп муаммо юзага келади?\n(Масалан: ҳужжат расмийлаштиришда, буюртма қабул қилишда, мижоз билан мулоқотда, ҳисобот тайёрлашда)",
+    "Бу муаммони батафсил тушунтиринг.",
+    "Бу муаммо қанчалик тез-тез такрорланади?\n(Ҳар куни / ҳафтада бир неча марта / ойда бир-икки марта / камдан-кам)",
+    "Бу муаммо туфайли қандай зарар бўлади?\n(Вақт йўқотилади / иш кечикади / мижоз норози бўлади / хато кўпаяди)",
+    "Сизнингча, бу муаммонинг асосий сабаби нима?\n(Масалан: жараён ноаниқ, масъул йўқ, ахборот ўз вақтида келмайди, дастур ишламайди)",
+    "Бу муаммо туфайли бир ойда тахминан қанча вақт исроф бўлади?\n(Масалан: тахминан неча соат)",
+    "Бу муаммони ҳал қилиш учун нима қилдингиз? Натижа бўлдими?",
+    "Муаммони бутунлай йўқотиш учун нима керак деб ўйлайсиз?",
+    "Иш жойингиз ва жараёнларни яхшилаш учун яна қандай таклифингиз бор?",
+]
+
+QUESTIONS_DEPT_RU = [
+    "В каком отделе вы работаете и какие обязанности выполняете?",
+    "В каком процессе у вас чаще всего возникают проблемы?\n(Например: при оформлении документов, приёме заказов, общении с клиентами, подготовке отчётов)",
+    "Подробно опишите эту проблему.",
+    "Как часто повторяется эта проблема?\n(Каждый день / несколько раз в неделю / один-два раза в месяц / редко)",
+    "Какой ущерб наносит эта проблема?\n(Потеря времени / задержка работы / недовольство клиента / увеличение ошибок)",
+    "По вашему мнению, в чём основная причина этой проблемы?\n(Например: процесс неясен, нет ответственного, информация поступает несвоевременно, программа не работает)",
+    "Сколько времени в месяц теряется из-за этой проблемы?\n(Например: примерно сколько часов)",
+    "Что вы сделали для решения этой проблемы? Был ли результат?",
+    "Что нужно, чтобы полностью устранить проблему?",
+    "Какие ещё предложения у вас есть по улучшению вашего рабочего места и процессов?",
+]
+
 # Eslatma xabarlari
 REMINDER_LOTIN = "⚠️ Eslatma!! Barcha ma'lumotlar sir saqlanadi.\nVaqtingizni ajratganingiz uchun tashakkur."
 REMINDER_KIRILL = "⚠️ Эслатма!! Барча маълумотлар сир сақланади.\nВақтингизни ажратганингиз учун ташаккур."
@@ -80,6 +119,8 @@ So'rovnomada qatnashgan xodimlar taqdirlanadi.
 
 ✅ 1 ta xodim uchchala yo'nalishda ham g'olib bo'lishi mumkin.
 
+📌 Barcha bo'lim rahbarlari o'z bo'limlaridagi xodimlarni so'rovnomaga jalb qilishlari so'raladi.
+
 Hammangizdan so'rovnomada faol qatnashishni so'raymiz!"""
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
@@ -91,12 +132,15 @@ LANG, SCRIPT, DEPARTMENT, FULLNAME, SURVEY = range(5)
 def get_questions(context):
     lang = context.user_data.get("lang")
     script = context.user_data.get("script")
+    dept = context.user_data.get("department", "")
+    is_dept = dept in ["1-Departament", "2-Departament", "4-Departament", "5-Departament"]
+
     if lang == "ru":
-        return QUESTIONS_RU
+        return QUESTIONS_DEPT_RU if is_dept else QUESTIONS_RU
     elif script == "kirill":
-        return QUESTIONS_KIRILL
+        return QUESTIONS_DEPT_KIRILL if is_dept else QUESTIONS_KIRILL
     else:
-        return QUESTIONS_LOTIN
+        return QUESTIONS_DEPT_LOTIN if is_dept else QUESTIONS_LOTIN
 
 
 async def delete_msg(context, chat_id, msg_id):
@@ -148,11 +192,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data.clear()
     context.user_data["del"] = []
 
-    # E'lonni yuborish
     elon_msg = await update.message.reply_text(ELON_TEXT)
     context.user_data["del"].append(elon_msg.message_id)
 
-    # Til tanlash tugmalari
     kb = [[
         InlineKeyboardButton("🇺🇿 O'zbek", callback_data="uz"),
         InlineKeyboardButton("🇷🇺 Русский", callback_data="ru"),
@@ -269,7 +311,7 @@ async def dept_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         text = "👤 Ism va familiyangizni yozing:"
 
-    msg = await context.bot.send_message(chat_id=q.message.chat_id, text=text, )
+    msg = await context.bot.send_message(chat_id=q.message.chat_id, text=text)
     context.user_data["del"].append(msg.message_id)
     return FULLNAME
 
@@ -279,7 +321,6 @@ async def got_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["del"].append(update.message.message_id)
     context.user_data["answers"] = []
     context.user_data["q_num"] = 0
-
     return await send_question(update.message.chat_id, context)
 
 
@@ -299,7 +340,7 @@ async def send_question(chat_id, context):
     num = NUM_EMOJI[i] if i < len(NUM_EMOJI) else f"{i+1}."
     header = f"📋 {label} ({i + 1}/{len(questions)})\n\n{num} "
 
-    msg = await context.bot.send_message(chat_id=chat_id, text=header + questions[i], )
+    msg = await context.bot.send_message(chat_id=chat_id, text=header + questions[i])
     context.user_data["del"].append(msg.message_id)
     return SURVEY
 
@@ -384,7 +425,6 @@ async def restart_survey(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = q.message.chat_id
     current_msg_id = q.message.message_id
 
-    # Oxirgi 150 ta xabarni parallel o'chirish
     async def try_delete(mid):
         try:
             await context.bot.delete_message(chat_id=chat_id, message_id=mid)
