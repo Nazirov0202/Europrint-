@@ -57,42 +57,42 @@ QUESTIONS_RU = [
 ]
 
 QUESTIONS_DEPT_LOTIN = [
-    "Siz qaysi bo'limda va qanday vazifani bajarasiz?",
-    "Ish davomingizda qaysi jarayonda eng ko'p muammo yuzaga keladi?\n(Masalan: hujjat rasmiylashtirishda, buyurtma qabul qilishda, mijoz bilan muloqotda, hisobot tayyorlashda)",
+    "Qaysi lavozimda va qanday vazifani bajarasiz?",
+    "Ishingiz davomida qaysi jarayonda eng ko'p muammo yuzaga keladi?\n(Masalan: hujjat rasmiylashtirishda, buyurtma qabul qilishda, mijoz bilan muloqotda, hisobot tayyorlashda)",
     "Bu muammoni batafsil tushuntiring.",
     "Bu muammo qanchalik tez-tez takrorlanadi?\n(Har kuni / haftada bir necha marta / oyda bir-ikki marta / kamdan-kam)",
     "Bu muammo tufayli qanday zarar bo'ladi?\n(Vaqt yo'qotiladi / ish kechikadi / mijoz norozi bo'ladi / xato ko'payadi)",
     "Sizningcha, bu muammoning asosiy sababi nima?\n(Masalan: jarayon noaniq, mas'ul yo'q, axborot o'z vaqtida kelmaydi, dastur ishlamaydi)",
-    "Bu muammo tufayli bir oyda taxminan qancha vaqt isrof bo'ladi?\n(Masalan: taxminan necha soat)",
+    "Bu muammo tufayli bir oyda taxminan qancha vaqt sarflanadi?\n(Masalan: taxminan necha soat)",
     "Bu muammoni hal qilish uchun nima qildingiz? Natija bo'ldimi?",
     "Muammoni butunlay yo'qotish uchun nima kerak deb o'ylaysiz?",
-    "Ish joyingiz va jarayonlarni yaxshilash uchun yana qanday taklifingiz bor?",
+    "Jarayonlarni yaxshilash uchun yana qanday taklifingiz bor?",
 ]
 
 QUESTIONS_DEPT_KIRILL = [
-    "Сиз қайси бўлимда ва қандай вазифани бажарасиз?",
-    "Иш давомингизда қайси жараёнда энг кўп муаммо юзага келади?\n(Масалан: ҳужжат расмийлаштиришда, буюртма қабул қилишда, мижоз билан мулоқотда, ҳисобот тайёрлашда)",
+    "Қайси лавозимда ва қандай вазифани бажарасиз?",
+    "Ишингиз давомида қайси жараёнда энг кўп муаммо юзага келади?\n(Масалан: ҳужжат расмийлаштиришда, буюртма қабул қилишда, мижоз билан мулоқотда, ҳисобот тайёрлашда)",
     "Бу муаммони батафсил тушунтиринг.",
     "Бу муаммо қанчалик тез-тез такрорланади?\n(Ҳар куни / ҳафтада бир неча марта / ойда бир-икки марта / камдан-кам)",
     "Бу муаммо туфайли қандай зарар бўлади?\n(Вақт йўқотилади / иш кечикади / мижоз норози бўлади / хато кўпаяди)",
     "Сизнингча, бу муаммонинг асосий сабаби нима?\n(Масалан: жараён ноаниқ, масъул йўқ, ахборот ўз вақтида келмайди, дастур ишламайди)",
-    "Бу муаммо туфайли бир ойда тахминан қанча вақт исроф бўлади?\n(Масалан: тахминан неча соат)",
+    "Бу муаммо туфайли бир ойда тахминан қанча вақт сарфланади?\n(Масалан: тахминан неча соат)",
     "Бу муаммони ҳал қилиш учун нима қилдингиз? Натижа бўлдими?",
     "Муаммони бутунлай йўқотиш учун нима керак деб ўйлайсиз?",
-    "Иш жойингиз ва жараёнларни яхшилаш учун яна қандай таклифингиз бор?",
+    "Жараёнларни яхшилаш учун яна қандай таклифингиз бор?",
 ]
 
 QUESTIONS_DEPT_RU = [
-    "В каком отделе вы работаете и какие обязанности выполняете?",
-    "В каком процессе у вас чаще всего возникают проблемы?\n(Например: при оформлении документов, приёме заказов, общении с клиентами, подготовке отчётов)",
+    "На какой должности вы работаете и какие обязанности выполняете?",
+    "В ходе вашей работы в каком процессе чаще всего возникают проблемы?\n(Например: при оформлении документов, приёме заказов, общении с клиентами, подготовке отчётов)",
     "Подробно опишите эту проблему.",
     "Как часто повторяется эта проблема?\n(Каждый день / несколько раз в неделю / один-два раза в месяц / редко)",
     "Какой ущерб наносит эта проблема?\n(Потеря времени / задержка работы / недовольство клиента / увеличение ошибок)",
     "По вашему мнению, в чём основная причина этой проблемы?\n(Например: процесс неясен, нет ответственного, информация поступает несвоевременно, программа не работает)",
-    "Сколько времени в месяц теряется из-за этой проблемы?\n(Например: примерно сколько часов)",
+    "Сколько времени в месяц тратится из-за этой проблемы?\n(Например: примерно сколько часов)",
     "Что вы сделали для решения этой проблемы? Был ли результат?",
     "Что нужно, чтобы полностью устранить проблему?",
-    "Какие ещё предложения у вас есть по улучшению вашего рабочего места и процессов?",
+    "Какие ещё предложения у вас есть по улучшению процессов?",
 ]
 
 # Eslatma xabarlari
