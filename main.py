@@ -150,6 +150,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # E'lonni yuborish
     elon_msg = await update.message.reply_text(ELON_TEXT)
+    context.user_data["del"].append(elon_msg.message_id)
 
     # Til tanlash tugmalari
     kb = [[
@@ -161,6 +162,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🌐 Tilni tanlang / Выберите язык:",
         reply_markup=InlineKeyboardMarkup(kb),
     )
+    context.user_data["del"].append(msg.message_id)
     return LANG
 
 
@@ -185,6 +187,7 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text="📝 Yozuv turini tanlang:",
             reply_markup=InlineKeyboardMarkup(kb),
         )
+        context.user_data["del"].append(msg.message_id)
         return SCRIPT
     else:
         context.user_data["script"] = "ru"
@@ -198,6 +201,7 @@ async def lang_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text="🏭 Выберите ваш отдел:",
             reply_markup=InlineKeyboardMarkup(kb),
         )
+        context.user_data["del"].append(msg.message_id)
         return DEPARTMENT
 
 
@@ -231,6 +235,7 @@ async def script_chosen(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text=text,
         reply_markup=InlineKeyboardMarkup(kb),
     )
+    context.user_data["del"].append(msg.message_id)
     return DEPARTMENT
 
 
